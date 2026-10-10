@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f5f7">
+<meta name="description" content="Shubham Khandelwal — Senior DevOps Engineer, Technical Business Analyst and Product Owner focused on platform engineering, airline e-commerce, APIs and AWS.">
+<title>Shubham Khandelwal — Engineering meets Product</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --surface: rgba(255,255,255,.78);
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --blue: #0071e3;
+    --line: rgba(29,29,31,.1);
+    --dark: #101014;
+    --radius: 28px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #80bfff; outline-offset: 4px; }
+  .nav-wrap { position: sticky; top: 0; z-index: 20; background: rgba(245,245,247,.82); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0,0,0,.06); }
+  nav { max-width: var(--max); margin: auto; padding: 0 24px; height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .brand { font-size: 15px; font-weight: 650; letter-spacing: -.3px; white-space: nowrap; }
+  .nav-links { display: flex; align-items: center; gap: 24px; color: #424245; font-size: 12px; }
+  .nav-links a:hover, .text-link:hover { color: var(--blue); }
+  .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 10px 17px; background: var(--blue); color: white; font-size: 13px; font-weight: 550; transition: transform .2s, background .2s; }
+  .nav-cta:hover, .button:hover { background: #0077ed; transform: translateY(-1px); }
+  main { overflow: hidden; }
+  .container { max-width: var(--max); margin: auto; padding: 0 24px; }
+  .hero { min-height: 690px; display: grid; place-items: center; text-align: center; padding: 90px 24px 86px; position: relative; isolation: isolate; }
+  .hero::before { content: ""; position: absolute; z-index: -1; width: min(78vw, 780px); height: min(78vw, 780px); top: 4%; border-radius: 50%; background: radial-gradient(circle at 50% 45%, rgba(120,170,255,.28), rgba(174,147,255,.16) 36%, rgba(245,245,247,0) 70%); filter: blur(8px); }
+  .eyebrow { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  h1 { font-size: clamp(48px, 8vw, 92px); letter-spacing: -.075em; line-height: .98; margin: 22px 0; font-weight: 720; }
+  .gradient-text { background: linear-gradient(100deg, #111 5%, #555 45%, #0071e3 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { max-width: 700px; margin: 0 auto; color: #515154; font-size: clamp(18px, 2.3vw, 24px); letter-spacing: -.025em; line-height: 1.45; }
+  .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .button.secondary { color: var(--blue); background: rgba(0,113,227,.08); }
+  .button.secondary:hover { background: rgba(0,113,227,.14); }
+  .micro-note { margin-top: 34px; font-size: 12px; color: var(--muted); }
+  .section { padding: 88px 0; }
+  .section-heading { max-width: 760px; margin-bottom: 34px; }
+  .section-heading h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.06em; margin: 10px 0 14px; }
+  .section-heading p { color: var(--muted); font-size: 18px; margin: 0; max-width: 700px; }
+  .intro-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }
+  .panel { background: white; border-radius: var(--radius); padding: clamp(24px, 4vw, 40px); box-shadow: 0 8px 30px rgba(0,0,0,.025); }
+  .panel h3 { font-size: 24px; letter-spacing: -.04em; margin: 0 0 12px; }
+  .panel p { color: var(--muted); margin: 0; }
+  .stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+  .stat { padding: 22px; border-radius: 22px; background: #fff; min-height: 132px; }
+  .stat strong { display: block; font-size: clamp(30px, 4vw, 43px); letter-spacing: -.06em; line-height: 1.1; }
+  .stat span { display: block; color: var(--muted); font-size: 13px; margin-top: 9px; }
+  .dark-section { background: var(--dark); color: white; border-radius: 36px; margin: 12px 16px; }
+  .dark-section .section-heading p { color: #a1a1a6; }
+  .dark-section .eyebrow { color: #a1a1a6; }
+  .experience-list { display: grid; gap: 16px; }
+  .experience { border: 1px solid rgba(255,255,255,.13); background: linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); border-radius: 26px; padding: clamp(24px,4vw,36px); }
+  .experience-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+  .experience h3 { font-size: 26px; letter-spacing: -.04em; margin: 0; }
+  .company { color: #a1a1a6; margin-top: 3px; }
+  .date { color: #b8b8bd; font-size: 13px; white-space: nowrap; }
+  .experience ul { margin: 22px 0 0; padding-left: 20px; color: #d0d0d5; }
+  .experience li { margin: 9px 0; padding-left: 3px; }
+  .experience li::marker { color: #60a5fa; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+  .tag { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 8px 13px; color: #424245; background: rgba(255,255,255,.75); font-size: 13px; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .skill-card { background: white; padding: 26px; border-radius: 24px; }
+  .skill-icon { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: #f0f5ff; color: var(--blue); font-size: 21px; margin-bottom: 20px; }
+  .skill-card h3 { font-size: 20px; letter-spacing: -.035em; margin: 0 0 8px; }
+  .skill-card p { color: var(--muted); font-size: 14px; margin: 0; }
+  .journey-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+  .journey-card { background: white; border-radius: 24px; padding: 28px; }
+  .journey-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 650; }
+  .journey-card h3 { font-size: 23px; letter-spacing: -.04em; margin: 10px 0; }
+  .journey-card p { margin: 0; color: var(--muted); }
+  .education { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .education-card { background: white; border-radius: 22px; padding: 24px; }
+  .education-card h3 { margin: 0 0 6px; font-size: 18px; }
+  .education-card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .contact-section { padding: 100px 0 110px; text-align: center; }
+  .contact-section h2 { font-size: clamp(40px,7vw,76px); letter-spacing: -.07em; line-height: 1; margin: 12px 0 18px; }
+  .contact-section p { color: var(--muted); font-size: 18px; max-width: 560px; margin: 0 auto 28px; }
+  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .text-link { color: var(--blue); font-size: 14px; }
+  footer { padding: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+  .footer-inner { max-width: var(--max); margin: auto; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+  @media (max-width: 760px) {
+    .nav-links { gap: 14px; } .nav-links a:not(.nav-cta) { display: none; }
+    .hero { min-height: 610px; padding-top: 72px; }
+    .intro-grid, .skills-grid, .journey-grid, .education { grid-template-columns: 1fr; }
+    .dark-section { margin: 0; border-radius: 28px; }
+    .section { padding: 66px 0; }
+    .experience-top { display: block; } .date { margin-top: 8px; white-space: normal; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="nav-wrap">
+  <nav aria-label="Main navigation">
+    <a class="brand" href="#home">Shubham Khandelwal</a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#expertise">Expertise</a><a href="#education">Education</a>
+      <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </nav>
+</div>
+<main>
+  <section class="hero" id="home">
+    <div>
+      <div class="eyebrow">Platform Engineering · Business Analysis · Product</div>
+      <h1><span class="gradient-text">Engineering meets<br>product thinking.</span></h1>
+      <p>I’m Shubham Khandelwal — a technology professional turning complex business needs into scalable platforms, thoughtful integrations, and better digital experiences.</p>
+      <div class="hero-actions">
+        <a class="button" href="#experience">Explore my work <span aria-hidden="true">↓</span></a>
+        <a class="button secondary" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="micro-note">Based in Pune, India · 6 years of onsite experience in Tokyo, Japan</div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">A little about me</div>
+        <h2>Bridging business goals<br>and technical delivery.</h2>
+        <p>My experience spans enterprise DevOps platforms, airline e-commerce, API integration, quality assurance, and Agile delivery. I enjoy connecting stakeholder needs with reliable, maintainable technical solutions.</p>
+      </div>
+      <div class="intro-grid">
+        <div class="panel">
+          <h3>How I work</h3>
+          <p>I combine analytical problem-solving with hands-on technical understanding: from requirements, user stories and process mapping to deployment readiness, production analysis and continuous improvement. I value clear communication, collaborative delivery and measurable outcomes.</p>
+          <div class="tag-list">
+            <span class="tag">Product mindset</span><span class="tag">Agile delivery</span><span class="tag">Stakeholder alignment</span><span class="tag">Operational excellence</span>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>7.8</strong><span>Years of experience, as stated in my profile</span></div>
+          <div class="stat"><strong>6 yrs</strong><span>Onsite experience in Tokyo, Japan</span></div>
+          <div class="stat"><strong>10</strong><span>Team members led on an airline e-commerce project</span></div>
+          <div class="stat"><strong>20%</strong><span>Increase in online bookings contributed to within year one</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section" id="experience">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Career journey</div>
+        <h2>Building, improving<br>and delivering.</h2>
+        <p>From quality assurance to business analysis and platform engineering, each role has added a different perspective to how I solve problems.</p>
+      </div>
+      <div class="experience-list">
+        <article class="experience">
+          <div class="experience-top">
+            <div><h3>Senior DevOps Engineer</h3><div class="company">Xoriant · Pune, India</div></div>
+            <div class="date">December 2024 – Present</div>
+          </div>
+          <ul>
+            <li>Upgraded 7+ on-premises DevOps tools to LTS versions, preparing low-level design documents and supporting security testing and vulnerability fixes.</li>
+            <li>Administered DevOps tools across access and lifecycle management, monitoring, and application integrations.</li>
+            <li>Led an OSS Jenkins-to-CloudBees Jenkins migration, including requirements, backup and restore, access policies, and build migration strategy.</li>
+            <li>Supported Linux and Windows-hosted applications, performed production root-cause analysis, and used shell scripting to automate tasks.</li>
+            <li>Used Confluence for knowledge-base documentation and Jira and ServiceNow for ticket management.</li>
+          </ul>
+        </article>
+        <article class="experience">
+          <div class="experience-top">
+            <div><h3>Business Analyst</h3><div class="company">Tata Consultancy Services · Tokyo, Japan</div></div>
+            <div class="date">October 2019 – December 2024</div>
+          </div>
+          <ul>
+            <li>Led a 10-member team delivering an airline e-commerce web application, contributing to a 20% increase in online bookings within the first year.</li>
+            <li>Gathered and prioritized requirements through stakeholder workshops; created BRDs, FRDs, user stories, wireframes, and functional specifications.</li>
+            <li>Designed API integration solutions by analyzing REST and SOAP APIs and preparing interface specifications and sequence diagrams for reservation systems.</li>
+            <li>Owned end-to-end release deployment for AWS-based microservices, including planning, execution, validation, and production readiness.</li>
+            <li>Analyzed production metrics, conducted root-cause analysis, and recommended product improvements; used AS-IS and TO-BE analysis to identify process gaps.</li>
+            <li>Mentored junior Business Analysts on analysis practices, documentation, and stakeholder communication.</li>
+          </ul>
+        </article>
+        <article class="experience">
+          <div class="experience-top">
+            <div><h3>QA Analyst</h3><div class="company">Tata Consultancy Services · Pune, India</div></div>
+            <div class="date">October 2018 – September 2019</div>
+          </div>
+          <ul>
+            <li>Designed and executed test cases, managed defects in HP ALM, validated requirements, and coordinated test sign-off with business stakeholders.</li>
+            <li>Reviewed business and functional requirements, collaborated on test scenarios, and conducted UAT.</li>
+            <li>Supported implementation of an airline Self Bag Drop system and testing of Airline Departure Control System (DCS) modules.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="expertise">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">What I bring</div>
+        <h2>Different disciplines.<br>One connected perspective.</h2>
+        <p>A blend of platform operations, business understanding, integration design, and delivery experience.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">⌘</div><h3>Platform & DevOps</h3><p>Jenkins, CloudBees, Bamboo, Bitbucket, Nexus, SonarQube, Zephyr, Crowd, CI/CD, lifecycle management and automation.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">☁</div><h3>AWS & Operations</h3><p>AWS cloud services, release deployment, monitoring with Dynatrace, production support, root-cause analysis, Linux and Windows.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">↗</div><h3>Business Analysis</h3><p>Requirements discovery, BRDs and FRDs, user stories, wireframes, AS-IS / TO-BE analysis, stakeholder workshops and Agile practices.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">⌁</div><h3>API Design & Integration</h3><p>REST and SOAP API analysis, interface specifications, sequence diagrams, and airline reservation-system integrations.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">✓</div><h3>Quality & Validation</h3><p>Test planning, test-case execution, defect management, UAT, HP ALM, business validation and sign-off.</p></article>
+        <article class="skill-card"><div class="skill-icon" aria-hidden="true">◎</div><h3>Product & Delivery</h3><p>Prioritization, process improvement, production insights, release readiness, team leadership and continuous improvement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">My approach</div>
+        <h2>From ambiguity<br>to outcomes.</h2>
+      </div>
+      <div class="journey-grid">
+        <article class="journey-card"><div class="label">01 · Understand</div><h3>Start with the problem</h3><p>Work with stakeholders to clarify goals, understand user and business needs, and make requirements actionable.</p></article>
+        <article class="journey-card"><div class="label">02 · Design</div><h3>Connect the dots</h3><p>Translate needs into specifications, process flows, API integrations, user stories and implementation-ready plans.</p></article>
+        <article class="journey-card"><div class="label">03 · Deliver</div><h3>Make execution reliable</h3><p>Coordinate Agile delivery, validation, release planning and production readiness across teams.</p></article>
+        <article class="journey-card"><div class="label">04 · Improve</div><h3>Learn from the evidence</h3><p>Use operational metrics, defect patterns and root-cause analysis to identify gaps and recommend improvements.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Education & certification</div>
+        <h2>The foundation.</h2>
+      </div>
+      <div class="education">
+        <article class="education-card"><h3>Bachelor of Engineering — Mechanical Engineering</h3><p>North Maharashtra University · 2015–2018</p></article>
+        <article class="education-card"><h3>Diploma — Mechanical Engineering</h3><p>Government Polytechnic, Dhule · 2012–2015</p></article>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <h3>Certifications & learning</h3>
+        <p>AWS Certified Solutions Architect – Associate (SAA-C03) · AWS Training · Software Testing with Jira and Agile</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="eyebrow">Have a challenge in mind?</div>
+      <h2>Let’s build<br>something meaningful.</h2>
+      <p>Open to conversations around product-focused technology, platform engineering, business analysis, API integrations and digital delivery.</p>
+      <div class="contact-links">
+        <a class="button" href="mailto:khandelwalshubham1996@gmail.com">Email me ↗</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/srk10" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a>
+      </div>
+      <p style="font-size:13px;margin-top:24px">Pune District, Maharashtra, India</p>
+    </div>
+  </section>
+</main>
+<footer><div class="footer-inner"><span>© <span id="year">2026</span> Shubham Khandelwal</span><span>Designed with clarity, inspired by Apple.</span></div></footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
